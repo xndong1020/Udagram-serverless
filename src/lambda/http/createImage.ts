@@ -26,9 +26,6 @@ export const handler = middy(
     if (!validGroupId) {
       return {
         statusCode: 404,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
         body: JSON.stringify({
           error: "Group does not exist",
         }),
@@ -63,9 +60,6 @@ export const handler = middy(
 
     return {
       statusCode: 201,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
       body: JSON.stringify({ newItem, presignedUrl }),
     };
   }
